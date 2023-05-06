@@ -1,0 +1,78 @@
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Primary"
+        tools:context=".MainActivity"
+        tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/textMyNotes"
+        android:layout_width="279dp"
+        android:layout_height="77dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:fontFamily="@font/sfdbold"
+        android:text="@string/my_notes"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_20ssp" />
+
+    <LinearLayout
+            android:id="@+id/layoutQuickActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorQuickActionsBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/_20sdp"
+            android:layout_gravity="bottom">
+
+            <ImageView
+                android:id="@+id/imageAdd"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/add"
+                app:tint="@color/colorIcons" />
+
+            <ImageView
+                android:id="@+id/imageTimeTask"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/timetask"
+                app:tint="@color/colorIcons" />
+
+            <ImageView
+                android:id="@+id/imageAlarm"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/alarm"
+                app:tint="@color/colorIcons" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/AddMainButton"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:background="@drawable/background_add_button"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/plus"
+            app:layout_anchor="@+id/layoutQuickActions"
+            app:layout_anchorGravity="end|top"/>
+<!--            app:layout_constraintBottom_toTopof="@id/layoutQuickActions"-->
+<!--            app:layout_constraintEnd_toEndof="parent"-->
+<!--            app:layout_constraintTop_toTopof="@id/layoutQuickActions"-->
+<!--            app:layout_constraintVerticalBias="0.5"-->
+<!--            app:tint="@color/colorWhite" />-->
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
