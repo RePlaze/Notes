@@ -1,11 +1,16 @@
-package nazenov.notes;
+package nazenov.notes.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import androidx.constraintlayout.widget.ConstraintLayout;
+
+import java.util.List;
+
+import nazenov.notes.R;
+import nazenov.notes.entities.Note;
 
 
 public class MainActivity extends Activity {
@@ -25,5 +30,21 @@ public class MainActivity extends Activity {
                 );
             }
         });
+        getNotes();
+    }
+
+    private void getNotes() {
+        class GetNotesTask extends AsyncTask<Void,Void, List<Note>>{
+
+            @Override
+            protected List<Note> doInBackground(Void... voids) {
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(List<Note> notes) {
+                super.onPostExecute(notes);
+            }
+        }
     }
 }
