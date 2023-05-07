@@ -21,6 +21,20 @@
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/_20ssp" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:clipToPadding="false"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            app:layout_constraintBottom_toTopOf="@id/layoutQuickActions"
+            app:layout_constraintTop_toBottomOf="@id/textMyNotes" />
+
+
     <LinearLayout
             android:id="@+id/layoutQuickActions"
             android:layout_width="match_parent"
@@ -69,10 +83,5 @@
             android:src="@drawable/plus"
             app:layout_anchor="@+id/layoutQuickActions"
             app:layout_anchorGravity="end|top"/>
-<!--            app:layout_constraintBottom_toTopof="@id/layoutQuickActions"-->
-<!--            app:layout_constraintEnd_toEndof="parent"-->
-<!--            app:layout_constraintTop_toTopof="@id/layoutQuickActions"-->
-<!--            app:layout_constraintVerticalBias="0.5"-->
-<!--            app:tint="@color/colorWhite" />-->
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
