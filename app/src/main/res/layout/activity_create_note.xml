@@ -48,8 +48,9 @@
 
             <EditText
                 android:id="@+id/inputNoteTitle"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_18sdp"
                 android:background="@null"
                 android:hint="@string/note_title"
@@ -61,14 +62,16 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorTextHint"
                 android:textSize="@dimen/_16ssp"
-                app:layout_constraintTop_toBottomOf="@+id/imageBack"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="16dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/imageBack" />
+
+
 
             <TextView
                 android:id="@+id/textDateTime"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_15sdp"
                 android:fontFamily="@font/sftregular"
                 android:includeFontPadding="false"
                 android:textColor="@color/colorIcons"
@@ -86,7 +89,7 @@
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
                 android:fontFamily="@font/sftregular"
-                android:hint="@string/description"
+                android:hint="@string/subtitle"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="textMultiLine"
@@ -97,12 +100,12 @@
                 android:textColorHint="#9E9E9E"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/viewSubTitle"
+                app:layout_constraintStart_toEndOf="@id/viewSubtitleIndecator"
                 app:layout_constraintTop_toBottomOf="@id/textDateTime"
                 tools:ignore="VisualLintTextFieldSize" />
 
             <View
-                android:id="@+id/viewSubTitle"
+                android:id="@+id/viewSubtitleIndecator"
                 android:layout_width="@dimen/_5sdp"
                 android:layout_height="35dp"
                 android:layout_marginStart="@dimen/_14sdp"
@@ -113,9 +116,8 @@
 
             <EditText
                 android:id="@+id/inputNote"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_width="414dp"
+                android:layout_height="194dp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:background="@color/Primary"
                 android:fontFamily="@font/sftregular"
@@ -129,11 +131,12 @@
                 android:textColorHint="#9E9E9E"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/viewSubTitle"
+                app:layout_constraintTop_toBottomOf="@id/viewSubtitleIndecator"
                 tools:ignore="VisualLintTextFieldSize" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
+<include layout="@layout/layout_milscellanneous"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

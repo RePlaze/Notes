@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
             @Override
             protected void onPostExecute(List<Note> notes) {
                 super.onPostExecute(notes);
-                if(noteList.size() == 0) {
+                if(noteList.size() == 0)  {
                     noteList.addAll(notes);
                     notesAdapter.notifyDataSetChanged();
                 } else {
