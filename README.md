@@ -10,9 +10,8 @@ Notes App is a simple Android application that allows you to create, edit, and m
 * Search notes by title or content.
 
 ## Screenshots
-![Screenshot_20230509_212301_NotesApp](https://github.com/RePlaze/Notes/assets/115911341/308ea8ee-80cf-44f8-8fb0-1bf7e5fd719b)
-![Screenshot_20230509_212252_NotesApp](https://github.com/RePlaze/Notes/assets/115911341/33bca711-ef7f-44f9-ac7e-f068dd0f1bc8)
-
+![image](https://github.com/RePlaze/Notes/assets/115911341/fcf783e8-b518-44d7-9336-2004af3aad8c)
+![image](https://github.com/RePlaze/Notes/assets/115911341/c6751f1d-c4d1-47d5-8eb0-d4fc34416089)
 ## Libraries Used
 
 * [Room](https://developer.android.com/training/data-storage/room): provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
