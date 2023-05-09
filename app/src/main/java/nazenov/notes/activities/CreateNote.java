@@ -31,6 +31,7 @@ public class CreateNote extends AppCompatActivity {
     private TextView textDateTime;
     private String selectedNoteColor;
     private View viewSubtitleIndecator;
+    private Note alreadyAvailableNote;
 
 
     @Override
@@ -67,8 +68,19 @@ public class CreateNote extends AppCompatActivity {
 
         // Default Note Color
 //        selectedNoteColor = "333333";
-
+        if (getIntent().getBooleanExtra("isViewOrUpdate", false)) {
+            alreadyAvailableNote = (Note) getIntent().getSerializableExtra("note");
+            setViewOrUpdateNote();
+        }
         initMiscellaneous();
+        setSubtitleIndecatorColor();
+    }
+
+    private void setViewOrUpdateNote() {
+        inputNoteTitle.setText(alreadyAvailableNote.getTitle());
+        inputNoteSubTitle.setText(alreadyAvailableNote.getSubtitle());
+        inputNoteText.setText(alreadyAvailableNote.getNoteText());
+        textDateTime.setText(alreadyAvailableNote.getDateTime());
     }
 
     private void saveNote() {
@@ -85,6 +97,9 @@ public class CreateNote extends AppCompatActivity {
         note.setSubtitle(inputNoteSubTitle.getText().toString());
         note.setNoteText(inputNoteText.getText().toString());
         note.setDateTime(textDateTime.getText().toString());
+        if(alreadyAvailableNote != null){
+        note.setId(alreadyAvailableNote.getId());
+        }
 
         @SuppressLint("StaticFieldLeak")
         class SaveNoteTask extends AsyncTask<Void, Void, Void> {
@@ -175,9 +190,27 @@ public class CreateNote extends AppCompatActivity {
                 setSubtitleIndecatorColor();
             }
         });
+
+        if (alreadyAvailableNote != null && alreadyAvailableNote.getColor() != null && !alreadyAvailableNote.getColor().trim().isEmpty()) {
+            switch (alreadyAvailableNote.getColor()) {
+                case "#333333":
+                    layoutMiscellaneous.findViewById(R.id.viewColor1).performClick();
+                    break;
+                case "#FDBE3B":
+                    layoutMiscellaneous.findViewById(R.id.viewColor2).performClick();
+                    break;
+                case "#FF03DAC5":
+                    layoutMiscellaneous.findViewById(R.id.viewColor3).performClick();
+                    break;
+                case "#FF6200EE":
+                    layoutMiscellaneous.findViewById(R.id.viewColor4).performClick();
+                    break;
+
+            }
+        }
     }
 
-    private void setSubtitleIndecatorColor(){
+    private void setSubtitleIndecatorColor() {
         GradientDrawable gradientDrawable = (GradientDrawable) viewSubtitleIndecator.getBackground();
         gradientDrawable.setColor(Color.parseColor(selectedNoteColor));
     }
