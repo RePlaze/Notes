@@ -6,6 +6,8 @@ Notes App is a simple Android application that allows you to create, edit, and m
 
 * Create a new note by tapping the "+" button on the main screen.
 * View, edit, or delete existing notes by tapping on them in the list.
+* Select Colors
+* Add Photos | Links
 * Sort notes by date created or date modified.
 * Search notes by title or content.
 
